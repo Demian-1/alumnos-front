@@ -1,0 +1,39 @@
+<p-confirmDialog></p-confirmDialog>
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <h1>{{titulo}}</h1>
+            @if (losAlumnos.length > 0) {
+                <p-table [value]="losAlumnos" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5, 10, 20]">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Paterno</th>
+                            <th>Materno</th>
+                            <th>Email</th>
+                            <th>Operaciones</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-alumna>
+                        <tr>
+                            <td>{{alumna.id}}</td>
+                            <td>{{alumna.nombre}}</td>
+                            <td>{{alumna.paterno}}</td>
+                            <td>{{alumna.materno}}</td>
+                            <td>{{alumna.email}}</td>
+                            <td>
+                                <div class="icon-container">
+                                    <i class="pi pi-trash" (click)="confirm(alumna.nombre, alumna.id)"></i>
+                                    <i class="pi pi-pencil" (click)="editar(alumna.id)"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            } @else {
+                <div class="card">No hay nada que mostrar</div>
+            }
+        </div>
+    </div>
+</div>

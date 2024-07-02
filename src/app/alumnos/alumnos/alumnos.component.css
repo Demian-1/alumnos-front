@@ -1,0 +1,11 @@
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre los iconos */
+}
+
+.icon-container i {
+    cursor: pointer; /* Cambia el cursor al pasar sobre los iconos */
+    font-size: 1.2em; /* Tamaño de los iconos, puedes ajustar según sea necesario */
+}

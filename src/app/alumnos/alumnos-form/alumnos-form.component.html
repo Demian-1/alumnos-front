@@ -1,0 +1,33 @@
+<p-confirmDialog></p-confirmDialog>
+<div class="col-12">
+    <div class="card">
+        <div class="grid">
+            <div class="col-12 md:col-12">
+                <div class="card p-fluid">                
+                    <h1>Datos del Alumno</h1>
+                    <div class="field">
+                        <label for="id">Id</label>
+                        <p-inputNumber [(ngModel)]="alumno.id" id="id" name="id" mode="decimal" [minFractionDigits]="0" [maxFractionDigits]="0"></p-inputNumber>
+                    </div>
+                    <div class="field">
+                        <label for="nombre">Nombre</label>
+                        <input pInputText type="text" [(ngModel)]="alumno.nombre" id="nombre" name="nombre"/>
+                    </div>
+                    <div class="field">
+                        <label for="paterno">Paterno</label>
+                        <input pInputText type="text" [(ngModel)]="alumno.paterno" id="paterno" name="paterno"/>
+                    </div>
+                    <div class="field">
+                        <label for="materno">Materno</label>
+                        <input pInputText type="text" [(ngModel)]="alumno.materno" id="materno" name="materno"/>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input pInputText type="text" [(ngModel)]="alumno.email" id="email" name="email"/>
+                    </div>
+                    <button pButton type="button" label="Enviar" (click)="confirm()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
